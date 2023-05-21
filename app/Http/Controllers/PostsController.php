@@ -74,4 +74,10 @@ class PostsController extends Controller
         $post->delete();
         return redirect()->route('posts.index')->with('success', __('Post deleted successfully'));
     }
+
+    public function restore($post_id): RedirectResponse
+    {
+        $post = Post::onlyTrashed()->find($post_id)->restore();
+        return redirect()->route('posts.index')->with('success', __('Post restored successfully'));
+    }
 }

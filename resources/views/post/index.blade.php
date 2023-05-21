@@ -45,7 +45,7 @@
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->id}}</td>
-                    <td>{{ $post->category->name}}</td>
+                    <td>{{ ($post->category) ? $post->category->name : 'Deleted Category' }}</td>
                     <td>{{ $post->title}}</td>
                     <td>{{ $post->body}}</td>
                     <td>{{ $post->image}}</td>
@@ -56,17 +56,20 @@
                     <td>{{ $post->deleted_at}}</td>
                     <td>{{ ($post->deletedBy)? $post->deletedBy->name : ''}}</td>
                     <td class="d-flex">
-                        <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
-
-                            <a class="btn btn-info w-full" href="{{ route('posts.show',$post->id) }}">Show</a>
-
-                            <a class="btn btn-primary w-full" href="{{ route('posts.edit',$post->id) }}">Edit</a>
-
-                            @csrf
-                            @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger bg-red-800 w-full">Delete</button>
-                        </form>
+                        @if($post->deleted_at != null)
+                            <form action="{{ route('posts.restore',$post->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-success bg-green-600 w-full">Restore</button>
+                            </form>
+                        @else
+                            <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
+                                <a class="btn btn-info w-full" href="{{ route('posts.show',$post->id) }}">Show</a>
+                                <a class="btn btn-primary w-full" href="{{ route('posts.edit',$post->id) }}">Edit</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger bg-red-800 w-full">Delete</button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
             @endforeach

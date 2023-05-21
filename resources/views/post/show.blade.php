@@ -1,4 +1,9 @@
 <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Post
+        </h2>
+    </x-slot>
     <div class="container pt-6">
         <div class="row">
             <div class="col-lg-12 margin-tb">
@@ -16,6 +21,12 @@
                 <div class="form-group">
                     <strong>No:</strong>
                     {{ $post->id }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Category:</strong>
+                    {{ ($post->category) ? $post->category->name : 'Deleted category'  }}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
