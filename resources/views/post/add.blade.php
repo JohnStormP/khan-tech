@@ -16,7 +16,8 @@
                             </h2>
                         </header>
 
-                        <form method="post" action="{{ route('posts.store') }}" class="mt-6 space-y-6">
+                        <form method="post" action="{{ route('posts.store') }}" enctype="multipart/form-data"
+                              class="mt-6 space-y-6">
                             @csrf
                             <div>
                                 <x-input-label for="category" :value="__('Category')"/>
@@ -45,7 +46,7 @@
 
                             <div>
                                 <x-input-label for="image" :value="__('Image')"/>
-                                <x-text-input id="image" name="image" type="text" class="mt-1 block w-full"
+                                <x-text-input id="image" name="image" type="file" class="mt-1 block w-full"
                                               autofocus
                                               autocomplete="image"/>
                                 <x-input-error class="mt-2" :messages="$errors->get('image')"/>

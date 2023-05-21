@@ -48,7 +48,7 @@
                     <td>{{ ($post->category) ? $post->category->name : 'Deleted Category' }}</td>
                     <td>{{ $post->title}}</td>
                     <td>{{ $post->body}}</td>
-                    <td>{{ $post->image}}</td>
+                    <td><img src="{{$post->image}}"></td>
                     <td>{{ ($post->is_published == 0) ? 'Not published' : 'Published' }}</td>
                     <td>{{ $post->created_at}}</td>
                     <td>{{ $post->updated_at}}</td>

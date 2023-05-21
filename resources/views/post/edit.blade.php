@@ -11,7 +11,8 @@
                 <div class="max-w-xl">
                     <section>
 
-                        <form method="post" action="{{ route('posts.update', $post->id) }}" class="mt-6 space-y-6">
+                        <form method="post" enctype="multipart/form-data"
+                              action="{{ route('posts.update', $post->id) }}" class="mt-6 space-y-6">
                             @csrf
                             @method('put')
                             <div>
@@ -41,8 +42,9 @@
                             </div>
 
                             <div>
+                                <img src="{{asset($post->image)}}">
                                 <x-input-label for="image" :value="__('Image')"/>
-                                <x-text-input id="image" name="image" type="text" class="mt-1 block w-full"
+                                <x-text-input id="image" name="image" type="file" class="mt-1 block w-full"
                                               :value="old('image', $post->image)"
                                               autofocus
                                               autocomplete="vin"/>

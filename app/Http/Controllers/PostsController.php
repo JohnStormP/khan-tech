@@ -33,7 +33,13 @@ class PostsController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        Post::create($request->all());
+        Post::create([
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'body' => $request->body,
+            'is_published' => $request->is_published,
+            'image' => $this->storeImage($request)
+        ]);
         return redirect()->route('posts.index')->with('success', __('Post added successfully'));
     }
 
@@ -59,8 +65,14 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post): RedirectResponse
     {
-        $request['updated_by'] = auth()->user()->id;
-        $post->update($request->all());
+        $post->update([
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'body' => $request->body,
+            'is_published' => $request->is_published,
+            'image' => $this->storeImage($request),
+            'updated_by' => auth()->user()->id
+        ]);
         return redirect()->route('posts.index')->with('success', __('Post updated successfully'));
     }
 
@@ -79,5 +91,12 @@ class PostsController extends Controller
     {
         $post = Post::onlyTrashed()->find($post_id)->restore();
         return redirect()->route('posts.index')->with('success', __('Post restored successfully'));
+    }
+
+    private function storeImage($request)
+    {
+        $name = uniqid() . $request->image->getClientOriginalName();
+        $request->image->move(storage_path('app/public/images'), $name);
+        return 'storage/images/' . $name;
     }
 }
