@@ -4,7 +4,7 @@
             Posts
         </h2>
     </x-slot>
-    <div class="container pt-2">
+    <div class="container-fluid pt-2">
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
@@ -48,7 +48,7 @@
                     <td>{{ ($post->category) ? $post->category->name : 'Deleted Category' }}</td>
                     <td>{{ $post->title}}</td>
                     <td>{{ $post->body}}</td>
-                    <td><img src="{{$post->image}}"></td>
+                    <td><img src="{{$post->image}}" class="img-thumbnail"></td>
                     <td>{{ ($post->is_published == 0) ? 'Not published' : 'Published' }}</td>
                     <td>{{ $post->created_at}}</td>
                     <td>{{ $post->updated_at}}</td>
