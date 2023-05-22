@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$accent: #0880AE;
+$dark: #252525;
+$body-text: #434343;
+$small-secondary-text: #727272;
+$main-bg: #FFFFFF;
+$cards-bg: #F5F5F5;
+
+.accent-color {
+    color: $accent;
+}
+
+.dark-color {
+    color: $dark;
+}
+
+.body-text-color {
+    color: $body-text;
+}
+
+.small-secondary-color {
+    color: $small-secondary-text;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 0;
+}
+
+.m-b-8 {
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 56px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+h5 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+@import "variables";
+
+#root {
+    padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: $accent;
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.post {
+    .post-text {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        color: $body-text;
+        margin-bottom: 36px;
+    }
+
+    .post-footer {
+        display: flex;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+
+        .post-date {
+            color: $small-secondary-text;
+            margin-right: 8px;
+        }
+
+        .post-author {
+            color: $accent;
+            margin-right: 32px;
+        }
+    }
+}
+
+.top-content {
+    height: 432px;
+
+    #random-post {
+        display: flex;
+        height: 432px;
+
+        #random-post-img {
+            float: left;
+
+            img {
+                height: 432px;
+                width: 424px;
+                max-width: none;
+                object-fit: cover;
+            }
+        }
+
+        #random-post-text {
+            float: right;
+            padding: 32px 24px;
+            background-color: $cards-bg;
+        }
+    }
+
+
+    #latest-news {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+        height: 100%;
+
+        #latest-news-items {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: stretch;
+
+            a {
+                display: block;
+                height: 33.3%;
+
+                .latest-news-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-position: center;
+                    resize: both;
+                    padding: 16px 32px;
+                    color: white;
+                    background-size: cover;
+                    height: 100%;
+
+                    .post-date {
+                        margin-top: 10px;
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mid-content {
+    padding-top: 72px;
+    height: 432px;
+
+    #main-post {
+        display: flex;
+        height: 432px;
+
+        #main-post-img {
+            float: left;
+
+            img {
+                height: 432px;
+                width: 872px;
+                max-width: none;
+                object-fit: cover;
+            }
+        }
+
+        #main-post-text {
+            float: right;
+            padding: 32px 24px;
+            background-color: $cards-bg;
+        }
+    }
+
+}
+
+.time-read {
+    height: 16px;
+    display: flex;
+}
+
+.post-time-read {
+    display: flex;
+}
+
+.clock {
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+    margin-right: 4px;
+}
