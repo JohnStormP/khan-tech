@@ -4,7 +4,7 @@
             <img :src="image" alt="" class="img-fluid"/>
         </div>
         <div class="category">
-            {{ category }}
+            <a href="#">{{ category }}</a>
         </div>
         <div class="title">
             {{ title }}

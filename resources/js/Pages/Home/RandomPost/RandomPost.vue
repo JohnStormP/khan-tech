@@ -8,7 +8,7 @@
 
             <div id="random-post-text">
                 <div class="post-category">
-                    <h4 class="bold"><a v-if="randomPost" href="#">{{ randomPost.category_id }}</a></h4>
+                    <h4 class="bold"><a v-if="randomPost" href="#">{{ randomPost.category.name }}</a></h4>
                 </div>
                 <div class="post-title">
                     <h2 class="medium" v-if="randomPost">{{ randomPost.title }}</h2>

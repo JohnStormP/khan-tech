@@ -9,7 +9,7 @@
                     </div>
                     <div id="main-post-text">
                         <div class="post-category">
-                            <h4 class="bold"><a v-if="main" href="#">{{ main.category_id }}</a></h4>
+                            <h4 class="bold"><a v-if="main" href="#">{{ main.category.name }}</a></h4>
                         </div>
                         <div class="post-title">
                             <h2 class="medium" v-if="main">{{ main.title }}</h2>

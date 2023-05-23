@@ -1,7 +1,7 @@
 <template>
     <div class="container mt-5">
         <div class="row">
-            <SinglePost v-for="post in posts" :title="post.title" :image="post.image"/>
+            <SinglePost v-for="post in posts" :title="post.title" :image="post.image" :category="post.category.name"/>
         </div>
         <div class="row">
             <div class="col">

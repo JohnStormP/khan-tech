@@ -10,9 +10,9 @@ class PostsController extends Controller
 {
     public function topPosts()
     {
-        $threePosts = Post::latest()->limit(3)->get();
-        $onePost = Post::latest()->offset(3)->first();
-        $randPost = Post::offset(4)->inRandomOrder()->first();
+        $threePosts = Post::with('category')->latest()->limit(3)->get();
+        $onePost = Post::with('category')->latest()->offset(3)->first();
+        $randPost = Post::with('category')->offset(4)->inRandomOrder()->first();
         return new PostResource([
             'latest' => $threePosts,
             'main' => $onePost,
@@ -22,6 +22,6 @@ class PostsController extends Controller
 
     public function otherPosts()
     {
-        return new PostResource(Post::orderBy('id', 'desc')->paginate(5));
+        return new PostResource(Post::with('category')->orderBy('id', 'desc')->paginate(5));
     }
 }
