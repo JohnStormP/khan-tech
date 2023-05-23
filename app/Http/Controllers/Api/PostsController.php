@@ -22,6 +22,6 @@ class PostsController extends Controller
 
     public function otherPosts()
     {
-        return new PostResource(Post::with('category')->orderBy('id', 'desc')->paginate(5));
+        return new PostResource(Post::with('category')->orderBy('id', 'desc')->paginate(6));
     }
 }

@@ -7,7 +7,9 @@
             <div class="col">
                 <div class="pagination-wrapper">
                     <ul class="pagination">
-                        <li v-for="n in pagination.lastPage">{{ n }}</li>
+<!--                        <li v-for="n in pagination.lastPage"><a href="">{{ n }}</a> </li>-->
+                        <li v-for="n in pagination.links"><div v-if="n.url"><div @click="pageClick(n.url)" v-html="n.label"></div></div></li>
+
                     </ul>
                 </div>
             </div>
