@@ -11,8 +11,8 @@ class PostsController extends Controller
     public function topPosts()
     {
         $threePosts = Post::with('category')->latest()->limit(3)->get();
-        $onePost = Post::with('category')->latest()->offset(3)->first();
-        $randPost = Post::with('category')->offset(4)->inRandomOrder()->first();
+        $onePost = Post::with('category')->latest()->offset(4)->first();
+        $randPost = Post::with('category')->offset(5)->inRandomOrder()->first();
         return new PostResource([
             'latest' => $threePosts,
             'main' => $onePost,

@@ -1,23 +1,24 @@
 <template>
-    <div class="wrapper">
-        <div class="content">
-            <div id="root" class="top-content">
-                <div class="container">
+    <div class="container">
+        <div class="wrapper">
+            <div class="content">
+                <div class="top-content">
+
                     <div class="row">
                         <RandomPost :randomPost="random"/>
                         <LatestNews :news="latest"/>
                     </div>
+
                 </div>
-            </div>
-            <div class="container">
+
                 <div class="row">
                     <MainPost :main="main"/>
                 </div>
-            </div>
-        </div>
-        <Posts/>
-    </div>
 
+            </div>
+            <Posts/>
+        </div>
+    </div>
 </template>
 
 <script>

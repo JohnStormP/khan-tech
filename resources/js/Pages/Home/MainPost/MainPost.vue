@@ -1,11 +1,11 @@
 <template>
-    <div id="main" class="mid-content">
+    <div id="main" class="mid-content m-b-72">
         <div class="row">
             <div class="col-md-12">
                 <div id="main-post" class="post">
                     <div id="main-post-img">
                         <img v-if="main" :src="main.image"
-                             alt="yoga studio">
+                             alt="yoga studio" class="img-fluid">
                     </div>
                     <div id="main-post-text">
                         <div class="post-category">

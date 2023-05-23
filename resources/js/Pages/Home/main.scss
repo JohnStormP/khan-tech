@@ -1,10 +1,7 @@
 @import "variables";
 @import "resources/scss/footer";
 @import "resources/scss/navbar";
-
-#root {
-    padding-top: 20px;
-}
+@import "resources/scss/pagination";
 
 a {
     text-decoration: none;
@@ -121,7 +118,6 @@ a {
 
             img {
                 height: 432px;
-                width: 872px;
                 max-width: none;
                 object-fit: cover;
             }
@@ -150,4 +146,35 @@ a {
     height: 12px;
     margin-top: 2px;
     margin-right: 4px;
+}
+
+@media (max-width: 792px) {
+    .top-content {
+        height: auto;
+
+        #random-post {
+            height: auto;
+            display: block;
+
+            .post-text {
+                overflow: hidden;
+            }
+
+            #random-post-img img {
+                width: 100%;
+            }
+        }
+    }
+    .mid-content {
+        height: auto;
+
+        #main-post {
+            height: auto;
+            display: block;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
 }

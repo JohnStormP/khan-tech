@@ -3,7 +3,7 @@
         <div id="random-post" class="post">
             <div id="random-post-img">
                 <img v-if="randomPost" :src="randomPost.image"
-                     alt="image">
+                     alt="image" class="img-fluid">
             </div>
 
             <div id="random-post-text">
