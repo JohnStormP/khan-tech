@@ -28,7 +28,7 @@
                 </h2>
                 <ul class="footer-list">
                     <li class="footer-list-item">
-                        <img src="storage/img/pin.svg" alt="pin">
+                        <img src="storage/img/Pin.svg" alt="pin">
                         4517 Washington Ave.
                         Manchester, Kentucky 39495
                     </li>
